@@ -1,0 +1,7 @@
+<strings>
+    <string id="AppName">Bananas and Bubbles</string>
+	<string id="BananaWin">Bananas WIN!</string>
+	<string id="BubbleWin">Bubbles WIN!</string>
+	<string id="Draw">Game is a DRAW</string>
+	<string id="ConfirmQuit">Really quit?</string>
+</strings>

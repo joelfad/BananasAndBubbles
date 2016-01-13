@@ -1,0 +1,38 @@
+<drawables>
+    <bitmap id="LauncherIcon" filename="launcher_icon.png" />
+    <bitmap id="Banana" filename="banana.png" />
+    <bitmap id="Bubble" filename="bubble.png" />
+    <bitmap id="BananaGray" filename="banana_gray.png" />
+    <bitmap id="BubbleGray" filename="bubble_gray.png" />
+    <drawable-list id="Grid" background="0x505052">
+        <shape type="rectangle" x="6" y="20" width="2" height="128" color="0x282829" />
+        <shape type="rectangle" x="28" y="21" width="1" height="126" color="0x282829" />
+        <shape type="rectangle" x="49" y="21" width="1" height="126" color="0x282829" />
+        <shape type="rectangle" x="70" y="21" width="1" height="126" color="0x282829" />
+        <shape type="rectangle" x="91" y="21" width="1" height="126" color="0x282829" />
+        <shape type="rectangle" x="112" y="21" width="1" height="126" color="0x282829" />
+        <shape type="rectangle" x="133" y="21" width="1" height="126" color="0x282829" />
+        <shape type="rectangle" x="154" y="21" width="1" height="126" color="0x282829" />
+        <shape type="rectangle" x="175" y="21" width="1" height="126" color="0x282829" />        
+        <shape type="rectangle" x="196" y="20" width="2" height="128" color="0x282829" />
+        <shape type="rectangle" x="8" y="20" width="188" height="1" color="0x282829" />
+        <shape type="rectangle" x="8" y="41" width="188" height="1" color="0x282829" />
+        <shape type="rectangle" x="8" y="62" width="188" height="1" color="0x282829" />
+        <shape type="rectangle" x="8" y="83" width="188" height="1" color="0x282829" />
+        <shape type="rectangle" x="8" y="104" width="188" height="1" color="0x282829" />
+        <shape type="rectangle" x="8" y="125" width="188" height="1" color="0x282829" />
+        <shape type="rectangle" x="8" y="146" width="188" height="2" color="0x282829" />
+    </drawable-list>
+    <drawable-list id="BananaBars" background="Gfx.COLOR_TRANSPARENT">
+        <shape type="rectangle" x="0" y="20" width="4" height="127" color="Gfx.COLOR_YELLOW" corner_radius="2" />
+        <shape type="rectangle" x="200" y="20" width="4" height="127" color="Gfx.COLOR_YELLOW" corner_radius="2" />
+    </drawable-list>
+    <drawable-list id="BubbleBars" background="Gfx.COLOR_TRANSPARENT">
+        <shape type="rectangle" x="0" y="20" width="4" height="127" color="Gfx.COLOR_BLUE" corner_radius="2" />
+        <shape type="rectangle" x="200" y="20" width="4" height="127" color="Gfx.COLOR_BLUE" corner_radius="2" />
+    </drawable-list>
+    <drawable-list id="GameOverBars" background="Gfx.COLOR_TRANSPARENT">
+        <shape type="rectangle" x="0" y="20" width="4" height="127" color="0xa0a0a4" corner_radius="2" />
+        <shape type="rectangle" x="200" y="20" width="4" height="127" color="0xa0a0a4" corner_radius="2" />
+    </drawable-list>
+</drawables>
