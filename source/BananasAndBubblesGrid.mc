@@ -5,7 +5,7 @@ Author: Joel McFadden
 Created: January 9, 2016
 
 Description:
-    A remake of Connect Four written in Monkey C for Garmin wearable devices.
+    The game "Connect Four", written in Monkey C for Garmin wearable devices.
 
 Copyright (C) 2016 Joel McFadden
 
@@ -28,7 +28,7 @@ class BananasAndBubblesGrid {
     hidden var numRows;
     hidden var numCols;
     hidden var gridArray;  // gridArray[0][0] is lower-left corner of visible grid
-    
+
     // Set up an empty grid
     // @param rows number of rows in grid
     // @param cols number of columns in grid
@@ -43,19 +43,19 @@ class BananasAndBubblesGrid {
             }
         }
     }
-    
+
     // Gets the value of chosen grid square
     // @return contents of square: banana, bubble, or empty
     function getSquare(row, col) {
         return gridArray[row][col];
     }
-    
+
     // Sets the value of chosen grid square
     // @param val new value of square: banana, bubble, or empty
     function setSquare(row, col, val) {
         gridArray[row][col] = val;
     }
-      
+
     // Check if column is full
     // @param col column to check
     // @return true if full, false otherwise
@@ -67,7 +67,7 @@ class BananasAndBubblesGrid {
         }
         return true;            // all squares in column are occupied
     }
-    
+
     // Check if entire grid is full
     // @return true if full, false otherwise
     function isFull() {
@@ -78,7 +78,7 @@ class BananasAndBubblesGrid {
         }
         return true;            // all columns are full
     }
-    
+
     // Check a row for four adjacent bananas or bubbles
     // @param row row to check
     // @param col column of most recently dropped item
@@ -115,7 +115,7 @@ class BananasAndBubblesGrid {
                 }
             }
         }
-        
+
         // color adjacent items
         if (count < 4) {
             return false;
@@ -126,7 +126,7 @@ class BananasAndBubblesGrid {
 
         return true;
     }
-    
+
     // Check a column for four adjacent bananas or bubbles
     // @param row row of most recently dropped item
     // @param col column to check
@@ -143,17 +143,17 @@ class BananasAndBubblesGrid {
             }
             else if (color) {
                 gridArray[row - i][col] = type; // recolor
-            }    
+            }
         }
-        
+
         // color adjacent items
         if (!color) {
             checkCol(row, col, type, true);
         }
-        
+
         return true;
     }
-    
+
     // Check an ascending diagonal for four adjacent bananas or bubbles
     // @param row row of most recently dropped item
     // @param col column of most recently dropped item
@@ -194,7 +194,7 @@ class BananasAndBubblesGrid {
             }
             r += 1;
         }
-        
+
         // color adjacent items
         if (count < 4) {
             return false;
@@ -246,7 +246,7 @@ class BananasAndBubblesGrid {
             }
             r -= 1;
         }
-        
+
         // color adjacent items
         if (count < 4) {
             return false;
@@ -257,7 +257,7 @@ class BananasAndBubblesGrid {
 
         return true;
     }
-    
+
     // Check entire grid for four adjacent bananas or bubbles
     // @param lastDrop coordinates of most recently dropped item
     // @return type of item found or empty if not found
@@ -266,30 +266,30 @@ class BananasAndBubblesGrid {
         var col = lastDrop[1];
         var type = gridArray[row][col];
         var found = false;
-        
+
         // check row
         if (checkRow(row, col, type, false)) {
             found = true;
         }
-        
+
         // check column
         if (checkCol(row, col, type, false)) {
             found = true;
         }
-        
+
         // check ascending diagonal
         if (checkAscending(row, col, type, false)) {
             found = true;
         }
-        
+
         // check descending diagonal
         if (checkDescending(row, col, type, false)) {
             found = true;
         }
-        
+
         return found ? type : empty;
     }
-    
+
     // Desaturate all items held in grid except for four adjacent
     // @param lastDrop coordinates of most recently dropped item
     // @param color if true, colors matching items adjacent to last dropped

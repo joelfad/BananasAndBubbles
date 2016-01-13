@@ -5,7 +5,7 @@ Author: Joel McFadden
 Created: January 9, 2016
 
 Description:
-    A remake of Connect Four written in Monkey C for Garmin wearable devices.
+    The game "Connect Four", written in Monkey C for Garmin wearable devices.
 
 Copyright (C) 2016 Joel McFadden
 
@@ -35,15 +35,15 @@ class BananasAndBubblesDelegate extends Ui.BehaviorDelegate {
         confirmQuit = Ui.loadResource(Rez.Strings.ConfirmQuit);
         BehaviorDelegate.initialize();
     }
-    
+
     // Responds to menu, up, down, and enter keys
     function onKey(evt) {
         if (!game.isRunning()) {
             return false;
         }
-        
+
         var key = evt.getKey();
-        
+
         if (key == KEY_MENU || key == KEY_UP) {
             game.selectNext();
             Ui.requestUpdate();
@@ -59,13 +59,13 @@ class BananasAndBubblesDelegate extends Ui.BehaviorDelegate {
         }
         return true;
     }
-    
+
     // Responds to user selecting back
     function onBack() {
         if (!game.isRunning()) {
             System.exit();  // if game is over, skip confirmation dialog
         }
-        
+
         // launch confirmation dialog
         var cd = new Ui.Confirmation(confirmQuit);
         Ui.pushView(cd, new ConfirmQuitDelegate(), Ui.SLIDE_IMMEDIATE);

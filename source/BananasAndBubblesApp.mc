@@ -5,7 +5,7 @@ Author: Joel McFadden
 Created: January 9, 2016
 
 Description:
-    A remake of Connect Four written in Monkey C for Garmin wearable devices.
+    The game "Connect Four", written in Monkey C for Garmin wearable devices.
 
 Copyright (C) 2016 Joel McFadden
 

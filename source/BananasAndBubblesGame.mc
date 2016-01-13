@@ -5,7 +5,7 @@ Author: Joel McFadden
 Created: January 9, 2016
 
 Description:
-    A remake of Connect Four written in Monkey C for Garmin wearable devices.
+    The game "Connect Four", written in Monkey C for Garmin wearable devices.
 
 Copyright (C) 2016 Joel McFadden
 
@@ -38,29 +38,29 @@ class BananasAndBubblesGame {
     hidden var selectedCol;     // which column is currently selected
     hidden var running;         // true if game is not over
     hidden var lastDrop;        // coordinates of last dropped item
-    
+
     function initialize() {
         grid = new BananasAndBubblesGrid(NUM_ROWS, NUM_COLS);
         running = true;         // start game
         state = bananaTurn;     // bananas go first
         selectedCol = NUM_COLS / 2;
     }
-    
+
     // Calculates the upper y-coordinate of given row
     function rowOffset(row) {
         return V_OFFSET + (NUM_ROWS - 1 - row) * 21;
     }
-    
+
     // Calculates the leftmost x-coordiate of given column
     function colOffset(col) {
         return H_OFFSET + col * 21;
     }
-    
+
     // Calculates the leftmost x-coordinate of currently selected column
     function selectedColOffset() {
         return colOffset(selectedCol);
     }
-    
+
     // Selects next valid column to drop item in (right)
     function selectNext() {
         var nextCol = (selectedCol + 1) % NUM_COLS;
@@ -69,7 +69,7 @@ class BananasAndBubblesGame {
         }
         selectedCol = nextCol;
     }
-    
+
     // Selects previous valid column to drop item in (left)
     function selectPrev() {
         var prevCol = (selectedCol - 1 + NUM_COLS) % NUM_COLS;
@@ -78,7 +78,7 @@ class BananasAndBubblesGame {
         }
         selectedCol = prevCol;
     }
-    
+
     // Drops item in selected column
     // @return true if successful, false otherwise
     function drop() {
@@ -94,7 +94,7 @@ class BananasAndBubblesGame {
         switchTurn();
         return true;
     }
-    
+
     // Maps state to item
     // @return item corresponding to current state
     function getTurn() {
@@ -106,7 +106,7 @@ class BananasAndBubblesGame {
         }
         return empty;
     }
-    
+
     // Switch state after turn
     function switchTurn() {
         var result = grid.checkAll(lastDrop);
@@ -128,22 +128,22 @@ class BananasAndBubblesGame {
         else if (state == bubbleTurn) {
             state = bananaTurn;
         }
-        
+
         if (!running) {
             grid.desaturate(lastDrop, (state != draw));
         }
     }
-    
+
     // Getters
 
     function getGrid() {
         return grid;
     }
-    
+
     function getState() {
         return state;
     }
-    
+
     function isRunning() {
         return running;
     }

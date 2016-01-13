@@ -5,7 +5,7 @@ Author: Joel McFadden
 Created: January 9, 2016
 
 Description:
-    A remake of Connect Four written in Monkey C for Garmin wearable devices.
+    The game "Connect Four", written in Monkey C for Garmin wearable devices.
 
 Copyright (C) 2016 Joel McFadden
 
@@ -47,15 +47,15 @@ class BananasAndBubblesView extends Ui.View {
                 bubble => Ui.loadResource(Rez.Drawables.Bubble),
                 bananaGray => Ui.loadResource(Rez.Drawables.BananaGray),
                 bubbleGray => Ui.loadResource(Rez.Drawables.BubbleGray)};
-                
+
         bars = {empty => new Rez.Drawables.GameOverBars(),
                 banana => new Rez.Drawables.BananaBars(),
                 bubble => new Rez.Drawables.BubbleBars()};
-                
+
         text = {bananaWin => Ui.loadResource(Rez.Strings.BananaWin),
                 bubbleWin => Ui.loadResource(Rez.Strings.BubbleWin),
                 draw => Ui.loadResource(Rez.Strings.Draw)};
-        
+
         color = {bananaWin => Gfx.COLOR_YELLOW,
                  bubbleWin => Gfx.COLOR_BLUE,
                  draw => Gfx.COLOR_WHITE};
@@ -71,12 +71,12 @@ class BananasAndBubblesView extends Ui.View {
     function onUpdate(dc) {
         // call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
-        
+
         // draw game
         drawSelectionArea(dc);
         drawGridItems(dc);
     }
-    
+
     // Draws the selection area located above the grid
     hidden function drawSelectionArea(dc) {
         var turn = game.getTurn();
@@ -92,7 +92,7 @@ class BananasAndBubblesView extends Ui.View {
         // draw side bars
         bars[turn].draw(dc);
     }
-    
+
     // Populates the grid with game items
     hidden function drawGridItems(dc) {
         var grid = game.getGrid();
@@ -108,7 +108,7 @@ class BananasAndBubblesView extends Ui.View {
                     i = game.NUM_ROWS; // skip to next column
                 }
             }
-        } 
+        }
     }
 
     //! Called when this View is removed from the screen. Save the
